@@ -1,0 +1,44 @@
+from Entity.$EntityFileName$ import $EntityName$ as $EntityName$
+import Dao.db_operate as executor
+
+
+class $EntityName$Dao:
+    def __init__(self):
+
+        self.table_name = $TableName$
+        self.executor = executor.DB_Operate()
+
+    def save_entity(self, $EntityVariableName$):
+        self.executor.save_entity($EntityVariableName$)
+
+    def save_entities(self, $EntitiesVariableName$):
+        for $EntityVariableName$ in $EntitiesVariableName$:
+            self.executor.save_entity($EntityVariableName$)
+
+    def get_entity_rewrite(self, $EntityVariableName$_id):
+        $EntityVariableName$ = $EntityName$()
+        $EntityVariableName$_container = self.executor.get_entity($EntityVariableName$_id, $EntityVariableName$)
+        return $EntityVariableName$_container
+
+    def get_count(self):
+        count = self.executor.get_count(self.table_name)
+        return count
+
+    def rand_get(self):
+        Device_data = $EntityName$()
+        Device_data_container = self.executor.rand_get(Device_data, 7)
+        return Device_data_container
+
+    def get_all(self):
+        $EntityVariableName$ = $EntityName$()
+        $EntityVariableName$_container_list, $EntityVariableName$s_container_entities = self.executor.get_all($EntityVariableName$)
+        return $EntityVariableName$_container_list, $EntityVariableName$s_container_entities
+
+    def get_by_key(self, key, key_value):
+        $EntityVariableName$ = $EntityName$()
+        $EntityVariableName$_container, $EntityVariableName$s_container_entities = self.executor.get_by_key(entity=$EntityVariableName$, key=key, key_value=key_value)
+        return $EntityVariableName$_container, $EntityVariableName$s_container_entities
+
+    def delete_by_id(self, id):
+        $EntityVariableName$ = $EntityName$()
+        return self.executor.delete_by_id($EntityVariableName$, id)
