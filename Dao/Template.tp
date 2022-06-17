@@ -1,5 +1,5 @@
 from Entity.$EntityFileName$ import $EntityName$ as $EntityName$
-import Dao.db_operate as executor
+import Dao.DBOperations as executor
 
 
 class $EntityName$Dao:
