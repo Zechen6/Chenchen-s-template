@@ -3,7 +3,7 @@ from flask import jsonify
 from json import dumps,dump
 import Dao.Sercurity as sercurity
 
-class DB_Operate():
+class DBExecutor():
     # connect database
     def __init__(self):
         self.database = "suggestion_db"
