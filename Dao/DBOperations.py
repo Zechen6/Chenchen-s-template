@@ -1,7 +1,7 @@
 import pymysql
 from flask import jsonify
 from json import dumps,dump
-import Sever.Dao.Sercurity as sercurity
+import Dao.Sercurity as sercurity
 
 class DB_Operate():
     # connect database
