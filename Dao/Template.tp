@@ -6,7 +6,7 @@ class $EntityName$Dao:
     def __init__(self):
 
         self.table_name = $TableName$
-        self.executor = executor.DB_Operate()
+        self.executor = executor.DBExecutor()
 
     def save_entity(self, $EntityVariableName$):
         self.executor.save_entity($EntityVariableName$)
